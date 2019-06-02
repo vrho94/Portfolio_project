@@ -1,13 +1,12 @@
 <!doctype html>
 <html lang="en">
 <head>
-  {% load staticfiles %}
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
   <meta name="generator" content="Jekyll v3.8.5">
-  <title>Album example · Bootstrap</title>
+  <title>All blogs</title>
 
   <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
 
@@ -43,45 +42,25 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav ml-auto">
-          <a class="nav-item nav-link" href="">Twitter</a>
-          <a class="nav-item nav-link" href="{% static 'Resume.pdf' %}">Resume</a>
-          <a class="nav-item nav-link" href="{% url 'blogs' %}">Blog</a>
+          <a class="nav-item nav-link" href="#">Twitter</a>
+          <a class="nav-item nav-link" href="#">Resume</a>
+          <a class="nav-item nav-link active" href="{% url 'blogs' %}">Blog</a>
         </div>
       </div>
     </nav>
   </header>
 
   <main role="main">
-
-    <section class="jumbotron text-center">
-      <div class="container">
-        <h1 class="jumbotron-heading">Živjo jaz sem Marjan!!!</h1>
-        <p class="lead text-muted">Zdravo jaz sem Marjan in zelo rad izdelujem Django spletne strani.</p>
-        <p>
-          <a href="mailto:aljaz.vrhovnik@gmail.com" class="btn btn-primary my-2">E-mail</a>
-        </p>
-      </div>
-    </section>
-
-    <div class="album py-5 bg-light">
-      <div class="container">
-        {% for job in jobs.all %}
-        <div class="row">
-          <div class="col-md-4">
-            <div class="card mb-4 shadow-sm">
-              <img class="card-img-top" src="{{ job.image.url }}" alt=""/>
-              <div class="card-body">
-                <p class="card-text">{{ job.summary }}</p>
-                <div class="d-flex justify-content-between align-items-center">
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        {% endfor %}
-      </div>
+    <div class="container">
+      <h1 class="text-center pt-3">Pozdravljeni na Marjanovem Blogu</h1>
+      <br />
+      <hr />
+      <h3>{{blog.title}}</h3>Objavljeno dne: {{blog.pub_date_modded}}
+      <img class="card-img-top" src="{{ blog.image.url }}" alt=""/>
+      <!-- <div>{{blog.body}}</div> -->
+      <div>{{ blog.body}}</div>
+      <hr />
     </div>
-
   </main>
 
   <footer class="text-muted">

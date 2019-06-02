@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
   <meta name="generator" content="Jekyll v3.8.5">
-  <title>Album example · Bootstrap</title>
+  <title>All blogs</title>
 
   <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
 
@@ -43,47 +43,36 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav ml-auto">
-          <a class="nav-item nav-link" href="">Twitter</a>
+          <a class="nav-item nav-link" href="#">Twitter</a>
           <a class="nav-item nav-link" href="{% static 'Resume.pdf' %}">Resume</a>
-          <a class="nav-item nav-link" href="{% url 'blogs' %}">Blog</a>
+          <a class="nav-item nav-link active" href="">Blog</a>
         </div>
       </div>
     </nav>
   </header>
 
   <main role="main">
-
-    <section class="jumbotron text-center">
-      <div class="container">
-        <h1 class="jumbotron-heading">Živjo jaz sem Marjan!!!</h1>
-        <p class="lead text-muted">Zdravo jaz sem Marjan in zelo rad izdelujem Django spletne strani.</p>
-        <p>
-          <a href="mailto:aljaz.vrhovnik@gmail.com" class="btn btn-primary my-2">E-mail</a>
-        </p>
-      </div>
-    </section>
-
-    <div class="album py-5 bg-light">
-      <div class="container">
-        {% for job in jobs.all %}
-        <div class="row">
-          <div class="col-md-4">
-            <div class="card mb-4 shadow-sm">
-              <img class="card-img-top" src="{{ job.image.url }}" alt=""/>
-              <div class="card-body">
-                <p class="card-text">{{ job.summary }}</p>
-                <div class="d-flex justify-content-between align-items-center">
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        {% endfor %}
-      </div>
+    <div class="container">
+      <h1 class="text-center pt-3">Pozdravljeni na Marjanovem Blogu</h1>
+      <br />
+      <h2 class="">Zadnje novice </h2>{% now "jS F Y H:i" %}
+      <hr />
+      {% for blog in blogs.all %}
+      <!-- <a href="{{blog.id}}"><h3>{{blog.title}}</h3></a>Objavljeno dne: {{blog.pub_date_modded}} -->
+      <a href="{% url 'detail' blog.id %}"><h3>{{blog.title}}</h3></a>Objavljeno dne: {{blog.pub_date_modded}}
+      <img class="card-img-top" src="{{ blog.image.url }}" alt=""/>
+      <!-- <div>{{blog.body}}</div> -->
+      <div>{{ blog.summary}}</div>
+      <hr />
+      {% endfor %}
     </div>
-
   </main>
-
+  <div>
+    <center>
+      <h3>Statična slika raspberry Pi-ja</h3>
+      <img src="{% static 'raspberryPi.jpg' %}" />
+    </center>
+  </div>
   <footer class="text-muted">
     <div class="container">
       <p>
