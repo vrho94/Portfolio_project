@@ -24,7 +24,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '022oiw$8#^n2^_a%_z#+u06)411)b(%dx5*^)lf#mkln#4%0*r'
+SECRET_KEY = 'vnesi_geslo'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -84,7 +84,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',#vključimo postgresql
         'NAME': 'portfoliodb',#ime podatkovne baze
         'USER':'postgres',#uporabniško ime za vpis v našo bazo
-        'PASSWORD':'aljaz1994',#geslo podatkovne baze
+        'PASSWORD':'',#geslo podatkovne baze
         'HOST':'localhost',#pomeni, da imamo lokalni dostop
         'PORT':'5432',#port dobiš z ukazom \conninfo
 
